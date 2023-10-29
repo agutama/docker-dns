@@ -1,0 +1,23 @@
+$TTL 2d
+
+$ORIGIN demo.example.com.
+
+@           IN      SOA     ns.demo.example.com.    info.example.com. (
+                            20231027    ; serial
+                            12h         ; refresh
+                            15m         ; retry
+                            3w          ; expire
+                            2h          ; minimum ttl
+                            )
+            IN      ns      ns.demo.example.com.
+ns          IN      A       10.2.1.18
+
+; -- add dns records below
+
+; -- prod servers
+srv-prod-1  IN      A       10.1.1.1
+srv-prod-2  IN      A       10.2.1.1
+
+; -- demo servers
+test-1      IN      A       10.2.1.18
+*.test-2    IN      A       10.2.1.18
